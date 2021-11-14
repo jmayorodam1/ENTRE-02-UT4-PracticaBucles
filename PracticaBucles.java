@@ -32,25 +32,37 @@ public class PracticaBucles {
      */
     public void generarNumeros(int n)   {
        int i = 1;
-       int media = 0;
-       int suma = 0;
-       int maxPares = Integer.MIN_VALUE;
+       double media = 0;
+       double sumaImpares = 0;
+       double maxPares = Integer.MIN_VALUE;
        int aleatorio = 1;
-       while(i <= n || aleatorio !=0){
-           aleatorio = generador.nextInt(51001) -1000; 
+       while(i <= n && aleatorio !=0){
            int fila = 1;
-        while (fila <= 5) {             
+        while (fila <= n/5) {             
             int col = 1;
-            while (col <= i)   {
-                System.out.print(String.format("%2d", fila));
+            while (col <= 5)   {
+                aleatorio = generador.nextInt(51001) -1000; 
+                System.out.print(String.format(" %12d:  %5d",aleatorio,obtenerNumeroSinCeros(aleatorio)));
                 col++;
+                i++;
+                media += aleatorio;
+                if(maxPares < aleatorio && aleatorio % 2 == 0){
+                    maxPares = aleatorio;
+                }
+                if(aleatorio % 2 != 0){
+                    sumaImpares += aleatorio;
+                }
+                
             }
             System.out.println();
             fila++;
         }
-        i++;
+        
         }
-
+        media /= i;
+        System.out.printf("\n%25s Media: %10.2f","",media);
+        System.out.printf("\n%25s Suma impares: %10.2f", "",sumaImpares);
+        System.out.printf("\n%25s Maximo pares: %10.2f", "",maxPares);
     }
 
     /**
@@ -76,7 +88,7 @@ public class PracticaBucles {
     public int obtenerNumeroSinCeros(int numero)   {
         int num = 0;
         int i = 0;
-        while(numero > 0){
+        while(numero != 0){
             if(numero % 10 != 0){
                 num += numero % 10 * Math.pow(10,i);
                 i++;
