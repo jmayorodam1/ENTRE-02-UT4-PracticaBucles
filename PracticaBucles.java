@@ -31,7 +31,25 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n)   {
-       //TODO
+       int i = 1;
+       int media = 0;
+       int suma = 0;
+       int maxPares = Integer.MIN_VALUE;
+       int aleatorio = 1;
+       while(i <= n || aleatorio !=0){
+           aleatorio = generador.nextInt(51001) -1000; 
+           int fila = 1;
+        while (fila <= 5) {             
+            int col = 1;
+            while (col <= i)   {
+                System.out.print(String.format("%2d", fila));
+                col++;
+            }
+            System.out.println();
+            fila++;
+        }
+        i++;
+        }
 
     }
 
@@ -56,10 +74,19 @@ public class PracticaBucles {
      *   
      */
     public int obtenerNumeroSinCeros(int numero)   {
-        //TODO
+        int num = 0;
+        int i = 0;
+        while(numero > 0){
+            if(numero % 10 != 0){
+                num += numero % 10 * Math.pow(10,i);
+                i++;
+            }
+            numero = numero / 10;
+            
+        }
         
         
-        return 0;
+        return num;
     }
 
     /**
