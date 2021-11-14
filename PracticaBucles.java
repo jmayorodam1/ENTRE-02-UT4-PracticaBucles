@@ -40,9 +40,9 @@ public class PracticaBucles {
      *  Hazlo sin utilizar if
      */
     public boolean esImpar(int numero)   {
-        //TODO
-        
-        
+        if(numero % 2 == 0){
+            return true;
+        }
         return  false;
     }
 
