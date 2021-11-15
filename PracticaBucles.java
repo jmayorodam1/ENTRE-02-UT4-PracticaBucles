@@ -56,9 +56,7 @@ public class PracticaBucles {
                 sumaImpares += aleatorio;
             }
 
-            
         }
-        
         media /= i;
         System.out.printf("\n%25s Media: %10.2f","",media);
         System.out.printf("\n%25s Suma impares: %10.2f", "",sumaImpares);
@@ -119,7 +117,18 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-        //TODO
+        String str = "";
+        for(int fila = 1; fila <= altura; fila++){
+            escribirCaracter(CARACTER,1);
+            for(int col = 1; col <= altura; col++){
+                escribirCaracter(ESPACIO,fila);
+                escribirCaracter(CARACTER,1);
+                escribirCaracter(ESPACIO,altura-fila);
+                escribirCaracter(CARACTER,1);
+                col += altura;                    
+            }
+            System.out.println();
+        }
 
     }
 
@@ -129,11 +138,10 @@ public class PracticaBucles {
      */
     private void escribirCaracter(char caracter, int n)    {
         for(int i = 1; i <= n; i++){
-        
+
             System.out.print(caracter);
-        
+
         }
 
-       
     }
 }
