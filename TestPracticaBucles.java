@@ -47,10 +47,10 @@ public class TestPracticaBucles
 
         int n = teclado.nextInt();
 
-        while(n < 3 && n > 10){
+        while(n < 3 || n > 10){
             System.out.println("Dame una altura");
 
-            numero = teclado.nextInt();
+            n = teclado.nextInt();
         }
         
         practica.escribirLetraN(n);
