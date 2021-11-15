@@ -57,6 +57,7 @@ public class PracticaBucles {
             }
 
         }
+        System.out.println();
         media /= i;
         System.out.printf("\n%25s Media: %10.2f","",media);
         System.out.printf("\n%25s Suma impares: %10.2f", "",sumaImpares);
