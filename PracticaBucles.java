@@ -37,6 +37,7 @@ public class PracticaBucles {
         double maxPares = Integer.MIN_VALUE;
         int aleatorio = 1;
         int fila = 0;
+        System.out.println("Nº maximo de aleatorios a generar " + n + "\no hasta que salga el 0\n");
         while(i <= n && aleatorio !=0){
 
             aleatorio = generador.nextInt(51001) -1000; 
@@ -69,7 +70,7 @@ public class PracticaBucles {
      *  Hazlo sin utilizar if
      */
     public boolean esImpar(int numero)   {
-        if(numero % 2 == 0){
+        if(numero % 2 != 0){
             return true;
         }
         return  false;
@@ -127,7 +128,11 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-        //TODO
+        for(int i = 1; i <= n; i++){
+        
+            System.out.print(caracter);
+        
+        }
 
        
     }
